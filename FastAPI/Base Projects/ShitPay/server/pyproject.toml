@@ -1,0 +1,10 @@
+[project]
+name = "Shit-Pay"
+version = "0.1.0"
+dependencies = [
+  
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
