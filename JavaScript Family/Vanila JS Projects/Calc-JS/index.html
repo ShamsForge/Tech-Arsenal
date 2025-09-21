@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>JavaScript Calc</title>
+        <link rel="icon" type="image/svg" href="favicon.svg">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+
+        <!-- Main Calculator Container -->
+        <div class="calculator-container" id="calc-container">
+            <!-- Calculator Display -->
+            <div class="display-container">
+                <input type="text" class="display" id="display" readonly>
+            </div>
+            <!-- Calculator Button Container -->
+            <div class="button-container">
+                <button class="btn clear" id="clear" data-action="clear">C</button>
+                <button class="btn function" id="backspace" data-action="backspace">←</button>
+                <button class="btn function" id="percent" data-action="percent">%</button>
+                <button class="btn operator tall" id="divide" data-action="divide">/</button>
+
+                <button class="btn number" id="7">7</button>
+                <button class="btn number" id="8">8</button>
+                <button class="btn number" id="9">9</button>
+                <button class="btn operator tall" id="multiply" data-action="multiply">*</button>
+
+                <button class="btn number" id="4">4</button>
+                <button class="btn number" id="5">5</button>
+                <button class="btn number" id="6">6</button>
+                <button class="btn operator tall" id="subtract" data-action="subtract">-</button>
+
+                <button class="btn number" id="1">1</button>
+                <button class="btn number" id="2">2</button>
+                <button class="btn number" id="3">3</button>
+                <button class="btn operator tall" id="add" data-action="add">+</button>
+
+                <button class="btn number zero" id="0">0</button>
+                <button class="btn number" id="decimal" data-action="decimal">.</button>
+                <button class="btn equals tall" id="equals" data-action="calculate">=</button>
+            </div>
+        </div>
+
+        <script src="script.js" defer></script>
+    </body>
+</html>
