@@ -6,32 +6,17 @@ async function fetchMods() {
 		const response = await fetch('https://api.modrinth.com/v2/projects_random?count=15');
 		const data = await response.json();
 		// Map API data to card objects
-		mods = data.map(mod => ({
-			title: mod.title,
-			desc: mod.description,
-			img: mod.icon_url || 'https://cdn.modrinth.com/data/1KVo5zza/images/6b6b6b6b6b6b6b6b6b6b6b6b6b6b6b6b6b6b6b6b.png' // fallback image
-		}));
+		   mods = data.map(mod => ({
+			   title: mod.title,
+			   desc: mod.description,
+			   img: mod.icon_url || 'https://cdn.modrinth.com/data/1KVo5zza/images/6b6b6b6b6b6b6b6b6b6b6b6b6b6b6b6b6b6b6b6b.png', // fallback image
+			   url: `https://modrinth.com/mod/${mod.slug || mod.project_id || ''}`
+		   }));
 		current = 0;
 		renderCard(current);
 	} catch (e) {
-		// fallback to static mods if fetch fails
-		mods = [
-			{
-				title: "OptiFine",
-				desc: "Performance booster and visual enhancer for Minecraft.",
-				img: "https://i.imgur.com/1Q9Z1Zm.png"
-			},
-			{
-				title: "JourneyMap",
-				desc: "Real-time mapping in-game or in a web browser.",
-				img: "https://i.imgur.com/2yaf2wb.png"
-			},
-			{
-				title: "Just Enough Items",
-				desc: "Item and recipe viewing mod for Minecraft.",
-				img: "https://i.imgur.com/3Q9Z1Zm.png"
-			}
-		];
+		console.error('Failed to fetch mods:', e);
+		mods = []
 		current = 0;
 		renderCard(current);
 	}
@@ -118,16 +103,24 @@ function handlePointerUp(e) {
 			current++;
 			renderCard(current);
 		}, 350);
-	} else if (currentX > 120) {
-		// Swipe right: green tint and show bubble, then reset
-		card.classList.add('swipe-right');
-		reactionBubbleRight.classList.add('show');
-		setTimeout(() => {
-			card.style.transition = '';
-			setCardTransform(0,0,0);
-			current++;
-			renderCard(current);
-		}, 350);
+	   } else if (currentX > 120) {
+		   // Swipe right: green tint and show bubble, then reset
+		   card.classList.add('swipe-right');
+		   reactionBubbleRight.classList.add('show');
+		   // Save to localStorage
+		   try {
+			   let saved = JSON.parse(localStorage.getItem('savedMods') || '[]');
+			   if (!saved.some(m => m.title === mods[current].title && m.url === mods[current].url)) {
+				   saved.push(mods[current]);
+				   localStorage.setItem('savedMods', JSON.stringify(saved));
+			   }
+		   } catch (e) { /* ignore */ }
+		   setTimeout(() => {
+			   card.style.transition = '';
+			   setCardTransform(0,0,0);
+			   current++;
+			   renderCard(current);
+		   }, 350);
 	} else {
 		// Snap back
 		card.style.transition = 'transform 0.3s cubic-bezier(.68,-0.55,.27,1.55)';
