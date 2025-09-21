@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quick Word Lookup</title>
+    <link rel="icon" type="image/svg" href="favicon.svg">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+
+
+    <!-- Animated Circles Background -->
+    <div id="circles-bg">
+      <div class="circle circle--1"></div>
+      <div class="circle circle--2"></div>
+      <div class="circle circle--3"></div>
+      <div class="circle circle--4"></div>
+      <div class="circle circle--5"></div>
+      <div class="circle circle--6"></div>
+    </div>
+
+    <div class="container">
+      <div class="input-wrapper">
+        <input type="text" id="word-input" placeholder="Enter a word..." />
+        <button id="send-btn" aria-label="Search">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="20" height="20" rx="5" fill="#b6f5c6"/>
+            <path d="M7 5L13 10L7 15" stroke="#1a7f3c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
+      <div class="card" id="result-card">
+        <h1 id="word"></h1>
+        <div class="phonetics" id="phonetics"></div>
+        <div class="meanings" id="meanings"></div>
+      </div>
+    </div>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,251 @@
+body {
+  background: transparent;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.container {
+  width: 100%;
+  max-width: 420px;
+  margin: 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 1rem 3rem 1rem 1rem;
+  font-size: 1.1rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-sizing: border-box;
+  outline: none;
+  transition: border 0.2s;
+}
+
+input[type="text"]:focus {
+  border: 1.5px solid #0078d7;
+}
+
+#send-btn {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 32px;
+  width: 32px;
+}
+
+#send-btn svg {
+  display: block;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.18);
+  border-radius: 18px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
+  padding: 2rem 1.5rem;
+  text-align: left;
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 1.5px solid rgba(255, 255, 255, 0.28);
+  z-index: 2;
+}
+
+#word {
+  font-size: 2rem;
+  margin: 0 0 0.5rem 0;
+  color: #fff;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.25), 0 1.5px 2px rgba(0,0,0,0.18);
+}
+
+.phonetics {
+  margin-bottom: 1rem;
+  color: #b3e5fc;
+  font-size: 1.1rem;
+  text-shadow: 0 1px 8px rgba(0,0,0,0.18);
+}
+
+.phonetics-audio-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: #7b1fa2;
+  border-radius: 8px;
+  margin-left: 0.5rem;
+  cursor: pointer;
+  transition: background 0.2s;
+  border: none;
+  outline: none;
+  position: relative;
+  box-shadow: 0 2px 8px rgba(123,31,162,0.10);
+}
+.phonetics-audio-btn:hover {
+  background: #9c27b0;
+}
+.phonetics-audio-btn svg {
+  width: 20px;
+  height: 20px;
+  fill: #fff;
+}
+
+.meanings {
+  margin-top: 1rem;
+}
+
+.meaning {
+  margin-bottom: 1.2rem;
+}
+
+.part-of-speech {
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 0.2rem;
+  text-shadow: 0 1px 8px rgba(0,0,0,0.18);
+}
+
+.definition {
+  margin-left: 1rem;
+  color: #f5f5f5;
+  text-shadow: 0 1px 8px rgba(0,0,0,0.18);
+}
+
+.example {
+  margin-left: 2rem;
+  color: #ffe082;
+  font-style: italic;
+  font-size: 0.98rem;
+  text-shadow: 0 1px 8px rgba(0,0,0,0.18);
+}
+
+
+
+
+/* codepen.io code */
+
+
+
+:root {
+  --r: 17;
+  --g: 206;
+  --b: 142;
+  --bg: #121212;
+}
+
+html {
+  background: var(--bg);
+  transition: background 2s ease-in-out;
+}
+
+.circle {
+  --scale: 1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  animation: pulse 3s infinite ease-in-out;
+  transition: background 2s ease-in-out;
+  background: rgb(var(--r), var(--g), var(--b));
+  mix-blend-mode: luminosity;
+  z-index: 0;
+}
+.circle--1 { width: 50px; height: 50px; opacity: 1; animation-delay: 0.12s; }
+.circle--2 { width: 100px; height: 100px; opacity: 0.5; animation-delay: 0.24s; }
+.circle--3 { width: 150px; height: 150px; opacity: 0.3333; animation-delay: 0.36s; }
+.circle--4 { width: 200px; height: 200px; opacity: 0.25; animation-delay: 0.48s; }
+.circle--5 { width: 250px; height: 250px; opacity: 0.2; animation-delay: 0.6s; }
+.circle--6 { width: 300px; height: 300px; opacity: 0.1666; animation-delay: 0.72s; }
+
+@media (min-width: 700px) {
+  .circle--1 { width: 70px; height: 70px; }
+  .circle--2 { width: 140px; height: 140px; }
+  .circle--3 { width: 210px; height: 210px; }
+  .circle--4 { width: 280px; height: 280px; }
+  .circle--5 { width: 350px; height: 350px; }
+  .circle--6 { width: 420px; height: 420px; }
+}
+@media (min-width: 1000px) {
+  .circle--1 { width: 70px; height: 70px; }
+  .circle--2 { width: 140px; height: 140px; }
+  .circle--3 { width: 210px; height: 210px; }
+  .circle--4 { width: 280px; height: 280px; }
+  .circle--5 { width: 350px; height: 350px; }
+  .circle--6 { width: 420px; height: 420px; }
+}
+
+/* 
+support for FF :sob: 
+FF doesn't support calc
+in animation delay or opacity
+so I can't use a for loop:
+https://bugzilla.mozilla.org/show_bug.cgi?id=1318305
+...I'm not proud of this
+*/
+.circle--1 {
+  opacity: 1;
+  animation-delay: 0.12s;
+}
+.circle--2 {
+  opacity: 0.5;
+  animation-delay: 0.24s;
+}
+.circle--3 {
+  opacity: 0.3333;
+  animation-delay: 0.36s;
+}
+.circle--4 {
+  opacity: 0.25;
+  animation-delay: 0.48s;
+}
+.circle--5 {
+  opacity: 0.2;
+  animation-delay: 0.6s;
+}
+.circle--6 {
+  opacity: 0.1666;
+  animation-delay: 0.72s;
+}
+
+
+
+@keyframes pulse {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  
+  25% {
+    transform: translate(-50%, -50%) scale(1.3);
+  }
+  
+  50% {
+    transform: translate(-50%, -50%) scale(0.70);
+  }
+  
+  75% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+
