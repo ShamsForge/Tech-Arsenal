@@ -1,0 +1,23 @@
+body {
+  background: #222;
+  color: #eee;
+  font-family: monospace;
+}
+#terminal {
+  width: 1880px;
+  height: 800px;
+  overflow-y: auto;
+  background: #111;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 1.3rem;
+}
+#input-line {
+  outline: none;
+  border: none;
+  background: #222;
+  color: #1ee;
+  width: 85%;
+  font-family: monospace;
+  font-size: 1.3rem;
+}
