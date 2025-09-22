@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #c7c6c6;
+    font-family: 'Pacifico', cursive;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+}
+
+#examples span {
+    display: block;
+    margin-bottom: 8px;
+}
+
+#download-list {
+    width: 800px;
+    height: 300px;
+    font-size: 1.1rem;
+    padding: 12px;
+    resize: both;
+    box-sizing: border-box;
+}
+
