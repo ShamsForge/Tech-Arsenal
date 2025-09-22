@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Meme</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="meme-container" id="meme-container">
+        <!-- Meme -->
+        <div class="meme">
+            <img id="meme-image" src="" alt="Meme Image">
+            <span id="meme-title"></span>
+            <span id="subreddit"></span>
+            <span id="ups"></span>
+        </div>
+        <!-- Author -->
+        <div class="meme-author">
+            <span id="author"></span>
+        </div>
+        <!-- Buttons -->
+        <div class="button-container">
+            <button class="share-button" id="share" title="Share This!">
+                <img src="send.png" alt="Share" class="share-icon" />
+            </button>
+            <button id="next-meme">Next Meme</button>
+        </div>
+    </div>
+
+    <!-- Script -->
+    <script src="meme.js"></script>
+</body>
+</html>
