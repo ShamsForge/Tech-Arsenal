@@ -8,7 +8,7 @@ const Rating = () => {
 
       <div className="stars">
         {[1, 2, 3, 4, 5].map((star) => (
-          <span>{"\u2605"}</span>
+          <span className="star">{"\u2605"}</span>
         ))}
       </div>
     </div>
