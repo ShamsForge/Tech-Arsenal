@@ -1,13 +1,16 @@
 import React, { useEffect, useState } from "react";
 
 import PopupHeader from "./header";
-import IntensityBar from "./intensity";
+import Intensity from "./intensity";
 import PopupButtons from "./buttons";
 import PopupFooter from "./footer";
 import Loader from "./loader";
 
+
+
 const popupIndex = () => {
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
+  const [intensity, setIntensity] = useState<number>(0);
 
   useEffect(() => {
     const t = setTimeout(() => setLoading(false), 1950);
@@ -18,8 +21,8 @@ const popupIndex = () => {
     <div className="w-[600px] h-[600px]">
       <div className="popup-background mx-auto p-6 flex flex-col items-center overflow-hidden">
         <PopupHeader />
-        <IntensityBar />
-        <PopupButtons />
+        <Intensity intensity={intensity} />
+        <PopupButtons intensity={intensity} setIntensity={setIntensity} />
         <PopupFooter />
       </div>
 
