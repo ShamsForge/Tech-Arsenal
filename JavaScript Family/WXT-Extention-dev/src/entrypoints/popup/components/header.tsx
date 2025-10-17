@@ -1,23 +1,44 @@
+import React, { useEffect, useState } from "react";
 
-import React, { useEffect, useRef } from "react";
+type Props = { intensity: number };
 
-const popupHeader = () => {
+const subHeaderArray = [
+  "/minecraft/sub-header/og.png",
+  "/minecraft/sub-header/1.png",
+  "/minecraft/sub-header/2.png",
+  "/minecraft/sub-header/3.png",
+  "/minecraft/sub-header/4.png",
+  "/minecraft/sub-header/5.png",
+  "/minecraft/sub-header/6.png",
+  "/minecraft/sub-header/7.png",
+];
+
+const PopupHeader: React.FC<Props> = ( intensity ) => {
+  const [sub, setSub] = useState<string>(subHeaderArray[0]);
+
+  useEffect(() => {
+    const pick = subHeaderArray[Math.floor(Math.random() * subHeaderArray.length)];
+    setSub(pick);
+  }, [intensity]);
 
   return (
-    <div className="flex flex-col">
-      <img src={"/minecraft/header/main.png"} 
-      alt="The Broken Script" 
-      className="h-12 mx-auto items-center" />
+    <div className="flex flex-col my-10 items-center">
+      <img
+        src={'/minecraft/header/main.png'}
+        alt="The Broken Script"
+        className="h-12 mx-auto items-center"
+      />
 
-      <div className="minecraft-popup-text">
-        <img src={'/minecraft/sub-header/og.png'} 
-        alt="Here I am" 
-        className="h-8 "
-        style={{ position: "relative", left: "270px" }}
+      <div className="minecraft-popup-text mt-2">
+        <img
+          src={sub}
+          alt="sub header"
+          className="h-8"
+          style={{ position: "relative", left: "150px" }}
         />
       </div>
     </div>
   );
 };
 
-export default popupHeader;
+export default PopupHeader;

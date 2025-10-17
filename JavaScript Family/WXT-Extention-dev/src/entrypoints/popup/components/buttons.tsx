@@ -22,14 +22,14 @@ const popupButtons = ({ intensity, setIntensity }: { intensity: number; setInten
   };
 
   return (
-    <div>
+    <div className="w-full flex flex-col items-center text-center absolute left-0 right-0 bottom-42 scale-125">
       <button
-        className="minecraft-btn minecraft-font text-white text-lg px-6 py-2"
+        className="minecraft-btn minecraft-font text-white text-lg px-8 py-3 mb-3 shadow-lg font-bold"
         onClick={() => { handleIntensity(); playClickSound(); }}>
         Intensity: {intensity === 0 ? "Off" : intensity === 25 ? "Low" : intensity === 50 ? "Medium" : intensity === 75 ? "High" : "Extreme"}
       </button>
       <button
-        className="minecraft-btn minecraft-font text-white text-lg px-6 py-2"
+        className="minecraft-btn minecraft-font text-white text-lg px-8 py-3 shadow-lg font-bold"
         onClick={() => {playClickSound(); setIntensity(0); }}
       >
         Stop

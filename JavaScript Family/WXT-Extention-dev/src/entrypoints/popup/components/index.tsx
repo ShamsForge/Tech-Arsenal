@@ -20,7 +20,7 @@ const popupIndex = () => {
   return (
     <div className="w-[600px] h-[600px]">
       <div className="popup-background mx-auto p-6 flex flex-col items-center overflow-hidden">
-        <PopupHeader />
+        <PopupHeader intensity={intensity} />
         <Intensity intensity={intensity} />
         <PopupButtons intensity={intensity} setIntensity={setIntensity} />
         <PopupFooter />
