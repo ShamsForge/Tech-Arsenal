@@ -1,8 +1,7 @@
+import { useIntensity } from "../../../context/IntensityContext";
 
-
-type Props = { intensity: number };
-
-const Intensity: React.FC<Props> = ({ intensity }) => {
+const Intensity: React.FC = () => {
+  const { intensity } = useIntensity();
   const label =
     intensity === 0 ? "Set Intensity to get Started" :
     intensity === 25 ? "Difficulty: Low" :
@@ -12,7 +11,7 @@ const Intensity: React.FC<Props> = ({ intensity }) => {
     `Intensity: ${intensity}%`;
 
   const desc =
-    intensity === 0 ? "Turn Intensity to get started" :
+    intensity === 0 ? "Turned Off" :
     intensity === 25 ? "Safe place, perfect for kids" :
     intensity === 50 ? "Balanced, fun for the most" :
     intensity === 75 ? "Challenging, not for the weaklings" :

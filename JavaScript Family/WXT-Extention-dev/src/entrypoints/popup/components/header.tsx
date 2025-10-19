@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
+import { useIntensity } from "@/context/IntensityContext";
+import Intensity from "./intensity";
 
-type Props = { intensity: number };
 
 const subHeaderArray = [
   "/minecraft/sub-header/og.png",
@@ -13,13 +14,14 @@ const subHeaderArray = [
   "/minecraft/sub-header/7.png",
 ];
 
-const PopupHeader: React.FC<Props> = ( intensity ) => {
+const PopupHeader: React.FC = ( ) => {
+  const { intensity, setIntensity, setNextIntensity } = useIntensity();
   const [sub, setSub] = useState<string>(subHeaderArray[0]);
 
   useEffect(() => {
     const pick = subHeaderArray[Math.floor(Math.random() * subHeaderArray.length)];
     setSub(pick);
-  }, [intensity]);
+  }, []);
 
   return (
     <div className="flex flex-col my-10 items-center">

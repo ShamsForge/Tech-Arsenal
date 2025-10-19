@@ -6,7 +6,7 @@ import PopupButtons from "./buttons";
 import PopupFooter from "./footer";
 import Loader from "./loader";
 
-
+import { IntensityProvider } from "../../../context/IntensityContext";
 
 const popupIndex = () => {
   const [loading, setLoading] = useState(false);
@@ -18,17 +18,21 @@ const popupIndex = () => {
   }, []);
 
   return (
-    <div className="w-[600px] h-[600px]">
-      <div className="popup-background mx-auto p-6 flex flex-col items-center overflow-hidden">
-        <PopupHeader intensity={intensity} />
-        <Intensity intensity={intensity} />
-        <PopupButtons intensity={intensity} setIntensity={setIntensity} />
-        <PopupFooter />
-      </div>
+    <IntensityProvider>
+      <div className="w-[600px] h-[600px]">
+        <div className="popup-background mx-auto p-6 flex flex-col items-center overflow-hidden">
+          <PopupHeader />
+          <Intensity />
+          <PopupButtons />
+          <PopupFooter />
+        </div>
 
-      {loading && <Loader />}
-    </div>
+        {loading && <Loader />}
+      </div>
+    </IntensityProvider>
   );
 };
 
 export default popupIndex;
+
+//intensity={intensity} setIntensity={setIntensity}
