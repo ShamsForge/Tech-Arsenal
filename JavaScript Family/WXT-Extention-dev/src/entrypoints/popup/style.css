@@ -2,14 +2,14 @@
 
 @font-face {
   font-family: "Minecraftia";
-  src: url("../../../public/minecraft/fonts/Minecraftia-Regular.ttf")
+  src: url("/minecraft/fonts/Minecraftia-Regular.ttf")
     format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: "Rubik Glitch";
-  src: url("../../../public/minecraft/fonts/RubikGlitch-Regular.ttf")
+  src: url("/minecraft/fonts/RubikGlitch-Regular.ttf")
     format("truetype");
   font-weight: normal;
   font-style: normal;
@@ -75,7 +75,7 @@
 
 /* minecraft background */
 .popup-background {
-  background-image: url("../../../public/minecraft/background.png");
+  background-image: url("/minecraft/background.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;

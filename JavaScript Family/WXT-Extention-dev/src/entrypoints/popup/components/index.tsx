@@ -13,6 +13,10 @@ const popupIndex = () => {
   const [intensity, setIntensity] = useState<number>(0);
 
   useEffect(() => {
+    browser.storage.local.get("intensity").then((data) => {
+      if (data.intensity !== undefined) setIntensity(data.intensity);
+    });
+
     const t = setTimeout(() => setLoading(false), 1950);
     return () => clearTimeout(t);
   }, []);
